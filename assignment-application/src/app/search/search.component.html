@@ -1,0 +1,43 @@
+
+        <h3>Search for a contact</h3>
+
+        
+        
+        <input [(ngModel)]="filterName">
+      
+
+
+        <div class="user-list" *ngIf="contact && contact.length">       
+          <table class="table table-condensed">
+              <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>phone</th>
+              </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let name of names | filterByName:filterName">
+                     
+                      <td>  {{ (name.length>1)? (name | slice:0: name.indexOf('@')):(name) }}</td>
+                      <td> {{ (name.length>1)? (name | slice:name.indexOf('@')+1 : name.length):(name) }}</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+    
+
+
+        
+       
+
+
+
+
+
+
+      
+        
+
+
+        
+

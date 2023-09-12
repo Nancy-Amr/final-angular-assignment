@@ -1,0 +1,28 @@
+<h3>Add a contact</h3>
+
+<div class="user-list" *ngIf="contact && contact.length">       
+    <table class="table table-condensed">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>phone</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let contact of contact; let i = index">
+               
+                <td>{{contact.name}}</td>
+                <td>{{contact.phone}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <label for="addContactName">Add new contact name </label>
+        <input type="text" #newContactName>
+    
+        <label for="addContactPhone">Add new contact number </label>
+        <input type="text" #addContactPhone>
+        
+        <button (click)="addContact(newContactName.value, addContactPhone.value)">Add</button>
+    </div>
+</div>
